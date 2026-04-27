@@ -458,6 +458,11 @@ export const getDataSalaryEmployee = async () => {
     const resultDataEmployee = await getDataEmployee();
     const resultDataPosition = await getDataPosition();
 
+    if (!Array.isArray(resultDataEmployee) || !Array.isArray(resultDataPosition)) {
+      console.error("Error: Invalid data from getDataEmployee or getDataPosition");
+      return [];
+    }
+
     const employeeSalary = resultDataEmployee
       .filter((employee) =>
         resultDataPosition.some(
@@ -483,6 +488,11 @@ export const getDataSalaryEmployee = async () => {
     const resultDataAttendance = await getDataAttendance();
     const resultDataDeduction = await getDataDeduction();
 
+    if (!Array.isArray(resultDataAttendance) || !Array.isArray(resultDataDeduction)) {
+      console.error("Error: Invalid data from getDataAttendance or getDataDeduction");
+      return [];
+    }
+
     const employeeDeductions = resultDataAttendance.map((attendance) => {
       const absentDeduction = attendance.absent > 0 ?
         resultDataDeduction
@@ -498,50 +508,25 @@ export const getDataSalaryEmployee = async () => {
         tahun: attendance.tahun,
         month: attendance.month,
         employeeName: attendance.employeeName,
-        present: attendance.present,
-        sick: attendance.sick,
-        absent: attendance.absent,
-        sickDeduction: sickDeduction,
-        absentDeduction: absentDeduction,
-        totalDeduction: sickDeduction + absentDeduction
+        absentDeduction,
+        sickDeduction,
       };
     });
 
-    // Total Employee Salary
-    const totalSalary = employeeSalary.map((employee) => {
-      const id = employee.id;
-      const attendance = resultDataAttendance.find(
-        (attendance) => attendance.employeeName === employee.employeeName
-      );
-      const deduction = employeeDeductions.find(
+    return employeeSalary.map((employee) => {
+      const deductions = employeeDeductions.find(
         (deduction) => deduction.employeeName === employee.employeeName
       );
-      const totalSalary =
-      (employee.baseSalary +
-      employee.transportAllowance +
-      employee.mealAllowance -
-      (deduction ? deduction.totalDeduction : 0)).toLocaleString();
 
       return {
-        tahun: deduction ? deduction.tahun : attendance ? attendance.tahun : 0,
-        month: deduction ? deduction.month : attendance ? attendance.month : 0,
-        id: id,
-        nationalId: employee.nationalId,
-        employeeName: employee.employeeName,
-        position: employee.position,
-        baseSalary: employee.baseSalary.toLocaleString(),
-        transportAllowance: employee.transportAllowance.toLocaleString(),
-        mealAllowance: employee.mealAllowance.toLocaleString(),
-        present: attendance.present,
-        sick: attendance.sick,
-        absent: attendance.absent,
-        deduction: deduction ? deduction.totalDeduction.toLocaleString() : 0,
-        total: totalSalary,
+        ...employee,
+        deduction: deductions ? deductions.absentDeduction + deductions.sickDeduction : 0,
+        total: employee.baseSalary + employee.transportAllowance + employee.mealAllowance - (deductions ? deductions.absentDeduction + deductions.sickDeduction : 0),
       };
     });
-    return totalSalary;
   } catch (error) {
-    console.error(error);
+    console.error("Error in getDataSalaryEmployee:", error);
+    return [];
   }
 };
 
