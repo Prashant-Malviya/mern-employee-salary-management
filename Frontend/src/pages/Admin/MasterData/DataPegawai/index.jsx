@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import Layout from '../../../../layout';
 import { Link, useNavigate } from 'react-router-dom';
 import { Breadcrumb, ButtonOne } from '../../../../components';
-import { FaRegEdit, FaPlus } from 'react-icons/fa';
+import { FaRegEdit, FaPlus, FaDownload } from 'react-icons/fa';
 import { BsTrash3 } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { deleteDataPegawai, getDataPegawai, getMe } from '../../../../config/redux/action';
 import { BiSearch } from 'react-icons/bi';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import axios from 'axios';
 
 const ITEMS_PER_PAGE = 4;
 
@@ -16,6 +17,7 @@ const DataPegawai = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchKeyword, setSearchKeyword] = useState('');
     const [filterStatus, setFilterStatus] = useState('');
+    const [positions, setPositions] = useState([]);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isError, user } = useSelector((state) => state.auth);
@@ -35,6 +37,56 @@ const DataPegawai = () => {
             (filterStatus === '' || status.toLowerCase() === statusKeyword)
         );
     });
+
+    const salaryByDepartment = positions.reduce((accumulator, position) => {
+        const name = position.nama_jabatan || position.positionName;
+        const salary = position.gaji_pokok || position.baseSalary || '';
+
+        if (name) {
+            accumulator[name] = salary;
+        }
+
+        return accumulator;
+    }, {});
+
+    const escapeCsvValue = (value) => {
+        const stringValue = String(value ?? '');
+
+        if (/[",\n]/.test(stringValue)) {
+            return `"${stringValue.replace(/"/g, '""')}"`;
+        }
+
+        return stringValue;
+    };
+
+    const downloadCsv = () => {
+        const headers = ['Name', 'Designation', 'Department', 'Salary'];
+        const rows = filteredDataPegawai.map((pegawai) => {
+            const department = pegawai.jabatan || pegawai.position || '';
+            const salary = salaryByDepartment[department] || '';
+
+            return [
+                pegawai.nama_pegawai || pegawai.employeeName || '',
+                pegawai.designation || 'Helper',
+                department,
+                salary,
+            ];
+        });
+
+        const csv = [headers, ...rows]
+            .map((row) => row.map(escapeCsvValue).join(','))
+            .join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+
+        link.href = url;
+        link.setAttribute('download', 'employee-list.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    };
 
     const goToPrevPage = () => {
         if (currentPage > 1) {
@@ -85,6 +137,21 @@ const DataPegawai = () => {
     useEffect(() => {
         dispatch(getDataPegawai(startIndex, endIndex));
     }, [dispatch, startIndex, endIndex]);
+
+    useEffect(() => {
+        const fetchPositions = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:5000/data_jabatan', {
+                    withCredentials: true,
+                });
+                setPositions(response.data);
+            } catch (error) {
+                setPositions([]);
+            }
+        };
+
+        fetchPositions();
+    }, []);
 
     useEffect(() => {
         dispatch(getMe());
@@ -147,14 +214,24 @@ const DataPegawai = () => {
     return (
         <Layout>
             <Breadcrumb pageName="Data Pegawai" />
-            <Link to="/data-pegawai/form-data-pegawai/add">
-                <ButtonOne>
-                    <span>Tambah Pegawai</span>
-                    <span>
-                        <FaPlus />
-                    </span>
-                </ButtonOne>
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row">
+                <Link to="/data-pegawai/form-data-pegawai/add">
+                    <ButtonOne>
+                        <span>Tambah Pegawai</span>
+                        <span>
+                            <FaPlus />
+                        </span>
+                    </ButtonOne>
+                </Link>
+                <button
+                    type="button"
+                    onClick={downloadCsv}
+                    className="inline-flex items-center justify-center gap-2 rounded bg-primary py-3 px-5 font-medium text-white transition hover:bg-opacity-90"
+                >
+                    <span>Download CSV</span>
+                    <FaDownload />
+                </button>
+            </div>
             <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1 mt-6">
                 <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
                     <div className="relative flex-1 md:mr-2 mb-4 md:mb-0">
