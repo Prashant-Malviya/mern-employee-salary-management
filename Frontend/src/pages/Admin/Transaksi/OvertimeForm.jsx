@@ -8,7 +8,7 @@ import Layout from '../../../layout';
 import { Breadcrumb, ButtonOne } from '../../../components';
 import { getMe } from '../../../config/redux/action';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'http://127.0.0.1:5000';
 
 const initialForm = {
     employee_id: '',
