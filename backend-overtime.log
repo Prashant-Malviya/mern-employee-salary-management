@@ -1,0 +1,160 @@
+
+> backend-mern-employee-salary-management@1.0.0 start
+> nodemon index.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node index.js`[39m
+Server up and running...
+✅ Database connected
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Server up and running...
+✅ Database connected
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Server up and running...
+✅ Database connected
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Server up and running...
+✅ Database connected
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+Server up and running...
+✅ Database connected
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Default admin created: username=admin password=123456
+Server up and running...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Database connected
+Server up and running...
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+Error: WHERE parameter "nama_pegawai" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1770:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1761:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1759:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2108:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1015:28)
+    at MySQLQueryInterface.select (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at data_pegawai.findAll (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.findOne (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:1240:12)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

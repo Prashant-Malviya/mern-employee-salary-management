@@ -4,6 +4,7 @@ SiPeKa (Employee Payroll System) is a system used by companies to manage employe
 <br/>
 
   * [Configuration and Setup](#configuration-and-setup)
+  * [Assignment Notes](#assignment-notes)
   * [Key Features](#key-features)
   * [Technologies used](#technologies-used)
       - [Frontend](#frontend)
@@ -25,7 +26,7 @@ In order to run this project locally, simply fork and clone the repository or do
 In the first terminal
 
 ```
-$ cd Fronted
+$ cd Frontend
 $ npm install (to install Frontend-side dependencies)
 $ npm run dev(to start the Frontend)
 ```
@@ -39,7 +40,12 @@ In the second terminal
 #  --- .env  ---
 
 APP_PORT =5000
-SESS_SECRET =
+SESS_SECRET = your-session-secret
+DB_HOST = localhost
+DB_PORT = 3306
+DB_NAME = your_database_name
+DB_USER = your_mysql_user
+DB_PASSWORD = your_mysql_password
 
 ```
 
@@ -51,6 +57,35 @@ $ npm install (to install Backend-side dependencies)
 $ npm start (to start the Backend)
 
 ```
+
+## Assignment Notes
+
+Chosen HRMS: MERN Employee Salary Management, because it already includes React, Express, MySQL, Sequelize, employee CRUD, payroll, and payslip workflows that match the assignment scope.
+
+Implemented feature work:
+
+- Overtime Entry and Approval for Site Workers with backend and frontend validation.
+- CORS and session authentication fixes for cookie-based login from Vite.
+- Admin seed user when the employee table is empty.
+- Ticket LF-101 through LF-105 as separate commits.
+
+Default login for a fresh empty database:
+
+```
+username: admin
+password: 123456
+```
+
+AI tools used:
+
+- OpenAI Codex for codebase analysis, implementation, validation checks, and commit organization.
+- In-app browser testing for the login/session flow.
+
+Ticket notes:
+
+- LF-103 adds `designation` as a worker trade dropdown. The existing `jabatan` field is kept as the department/position field to avoid breaking salary calculations already tied to `data_jabatan`.
+- LF-104 exports the currently filtered employee list to CSV with name, designation, department, and salary.
+- LF-105 uses horizontal scrolling on mobile to preserve the full employee table without hiding right-side columns.
 
 ##  Key Features
 

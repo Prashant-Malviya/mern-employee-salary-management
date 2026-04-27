@@ -40,7 +40,7 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
         dispatch(logoutUser());
         dispatch(reset())
         Swal.fire({
-          title: 'Logout Berhasil',
+          title: 'Logout Success',
           text: 'Anda telah berhasil keluar.',
           icon: 'success',
           timer: 1500,
@@ -170,24 +170,24 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         <ul className='mt-4 mb-5.5 flex flex-col gap-2.5 pl-6'>
                           <li>
                             <NavLink
-                              to='/data-pegawai'
+                              to='/data-employee'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Data Pegawai
+                              Employee Data
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to='/data-jabatan'
+                              to='/data-position'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Data Jabatan
+                              Data Position
                             </NavLink>
                           </li>
                         </ul>
@@ -199,10 +199,10 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
               </SidebarLinkGroup>
               {/* <!-- Master Data Admin --> */}
 
-              {/* <!-- Transaksi Admin --> */}
+              {/* <!-- Transaction Admin --> */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/transaksi' || pathname.includes('transaksi')
+                  pathname === '/transaction' || pathname.includes('transaction')
                 }
               >
                 {(handleClick, open) => {
@@ -210,8 +210,8 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                     <React.Fragment>
                       <NavLink
                         to='#'
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/transaksi' ||
-                          pathname.includes('transaksi')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/transaction' ||
+                          pathname.includes('transaction')) &&
                           'bg-graydark dark:bg-meta-4'
                           }`}
                         onClick={(e) => {
@@ -222,7 +222,7 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         }}
                       >
                         <FaRegMoneyBillAlt />
-                        Transaksi
+                        Transaction
                         <MdKeyboardArrowDown className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current text-2xl ${open && 'rotate-180'
                           }`} />
                       </NavLink>
@@ -234,35 +234,46 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         <ul className='mt-4 mb-5.5 flex flex-col gap-2.5 pl-6'>
                           <li>
                             <NavLink
-                              to='/data-kehadiran'
+                              to='/data-attendance'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Data Kehadiran
+                              Attendance Data
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to='/data-potongan'
+                              to='/data-deduction'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Data Potongan
+                              Data Deduction
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to='/data-gaji'
+                              to='/data-salary'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Data Gaji
+                              Data Salary
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to='/overtime'
+                              className={({ isActive }) =>
+                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                                (isActive && '!text-white')
+                              }
+                            >
+                              Overtime
                             </NavLink>
                           </li>
                         </ul>
@@ -272,12 +283,12 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                   )
                 }}
               </SidebarLinkGroup>
-              {/* <!-- Transaksi Admin --> */}
+              {/* <!-- Transaction Admin --> */}
 
-              {/* <!-- Laporan Admin --> */}
+              {/* <!-- Report Admin --> */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/laporan' || pathname.includes('laporan')
+                  pathname === '/report' || pathname.includes('report')
                 }
               >
                 {(handleClick, open) => {
@@ -285,8 +296,8 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                     <React.Fragment>
                       <NavLink
                         to='#'
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/laporan' ||
-                          pathname.includes('laporan')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/report' ||
+                          pathname.includes('report')) &&
                           'bg-graydark dark:bg-meta-4'
                           }`}
                         onClick={(e) => {
@@ -297,7 +308,7 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         }}
                       >
                         <TfiPrinter />
-                        Laporan
+                        Report
                         <MdKeyboardArrowDown className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current text-2xl ${open && 'rotate-180'
                           }`} />
                       </NavLink>
@@ -309,35 +320,35 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         <ul className='mt-4 mb-5.5 flex flex-col gap-2.5 pl-6'>
                           <li>
                             <NavLink
-                              to='/laporan/gaji'
+                              to='/report/salary'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Laporan Gaji
+                              Report Salary
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to='/laporan/absensi'
+                              to='/report/attendance'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Laporan Absensi
+                              Report Attendance
                             </NavLink>
                           </li>
                           <li>
                             <NavLink
-                              to='/laporan/slip-gaji'
+                              to='/report/slip-salary'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Slip Gaji
+                              Slip Salary
                             </NavLink>
                           </li>
                         </ul>
@@ -347,12 +358,12 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                   )
                 }}
               </SidebarLinkGroup>
-              {/* <!-- Laporan Admin --> */}
+              {/* <!-- Report Admin --> */}
 
-              {/* <!-- Pengaturan Admin --> */}
+              {/* <!-- Settings Admin --> */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/pengaturan' || pathname.includes('pengaturan')
+                  pathname === '/settings' || pathname.includes('settings')
                 }
               >
                 {(handleClick, open) => {
@@ -360,8 +371,8 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                     <React.Fragment>
                       <NavLink
                         to='#'
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/pengaturan' ||
-                          pathname.includes('pengaturan')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/settings' ||
+                          pathname.includes('settings')) &&
                           'bg-graydark dark:bg-meta-4'
                           }`}
                         onClick={(e) => {
@@ -372,7 +383,7 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         }}
                       >
                         <FiSettings />
-                        Pengaturan
+                        Settings
                         <MdKeyboardArrowDown className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current text-2xl ${open && 'rotate-180'
                           }`} />
                       </NavLink>
@@ -384,13 +395,13 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                         <ul className='mt-4 mb-5.5 flex flex-col gap-2.5 pl-6'>
                           <li>
                             <NavLink
-                              to='/ubah-password'
+                              to='/change-password'
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Ubah Password
+                              Change Password
                             </NavLink>
                           </li>
                           <li>
@@ -411,7 +422,7 @@ const SidebarAdmin = ({ sidebarOpen, setSidebarOpen }) => {
                   )
                 }}
               </SidebarLinkGroup>
-              {/* <!-- Pengaturan Admin --> */}
+              {/* <!-- Settings Admin --> */}
             </ul>
           </div>
         </nav>

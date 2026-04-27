@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDataKehadiran } from '../../../../config/redux/action';
+import { getDataAttendance } from '../../../../config/redux/action';
 import { AiFillDatabase } from 'react-icons/ai'
 
 const CardFour = () => {
   const dispatch = useDispatch();
-  const { dataKehadiran } = useSelector((state) => state.dataKehadiran);
-  const jumlahDataKehadiran = dataKehadiran.length;
+  const { dataAttendance } = useSelector((state) => state.dataAttendance);
+  const jumlahDataAttendance = dataAttendance.length;
 
   useEffect(() => {
-    dispatch(getDataKehadiran());
+    dispatch(getDataAttendance());
   }, [dispatch]);
 
   return (
@@ -21,9 +21,9 @@ const CardFour = () => {
       <div className='mt-4 flex items-end justify-between'>
         <div>
           <h4 className='text-title-md font-bold text-black dark:text-white'>
-            {jumlahDataKehadiran}
+            {jumlahDataAttendance}
           </h4>
-          <span className='text-sm font-medium'>Data Kehadiran</span>
+          <span className='text-sm font-medium'>Attendance Data</span>
         </div>
       </div>
     </div>

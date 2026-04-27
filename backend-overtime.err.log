@@ -1,0 +1,355 @@
+Mon, 27 Apr 2026 06:00:22 GMT express-session deprecated req.secret; provide secret option at file:\C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\index.js:30:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+Error: secret option required for sessions
+    at session (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express-session\index.js:211:12)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+    at router.process_params (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\express\lib\router\index.js:286:9
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\routes\OvertimeRoute.js' imported from C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\index.js
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:988:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:697:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:714:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:746:52)
+    at #resolve (node:internal/modules/esm/loader:679:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:599:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:252:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Backend/routes/OvertimeRoute.js'
+}
+
+Node.js v24.15.0
+node:internal/modules/esm/resolve:271
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\models\OvertimeModel.js' imported from C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\controllers\OvertimeController.js
+    at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+    at moduleResolve (node:internal/modules/esm/resolve:861:10)
+    at defaultResolve (node:internal/modules/esm/resolve:988:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:697:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:714:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:746:52)
+    at #resolve (node:internal/modules/esm/loader:679:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:599:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:252:17) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Backend/models/OvertimeModel.js'
+}
+
+Node.js v24.15.0
+Unable to start server: Error
+    at Query.run (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.sync (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Backend/index.js:77:9) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Deadlock found when trying to get lock; try restarting transaction
+      at Packet.asError (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packets\packet.js:788:17)
+      at Query.execute (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:552:34)
+      at PacketParser.onPacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:102:12)
+      at PacketParser.executeStart (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:109:25)
+      at Socket.emit (node:events:509:28)
+      at addChunk (node:internal/streams/readable:563:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+      at Readable.push (node:internal/streams/readable:394:5) {
+    code: 'ER_LOCK_DEADLOCK',
+    errno: 1213,
+    sqlState: '40001',
+    sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+    sql: 'ALTER TABLE `data_pegawai` CHANGE `tanggal_masuk` `tanggal_masuk` VARCHAR(255) NOT NULL;',
+    parameters: undefined
+  },
+  original: Error: Deadlock found when trying to get lock; try restarting transaction
+      at Packet.asError (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packets\packet.js:788:17)
+      at Query.execute (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:552:34)
+      at PacketParser.onPacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:102:12)
+      at PacketParser.executeStart (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:109:25)
+      at Socket.emit (node:events:509:28)
+      at addChunk (node:internal/streams/readable:563:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+      at Readable.push (node:internal/streams/readable:394:5) {
+    code: 'ER_LOCK_DEADLOCK',
+    errno: 1213,
+    sqlState: '40001',
+    sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+    sql: 'ALTER TABLE `data_pegawai` CHANGE `tanggal_masuk` `tanggal_masuk` VARCHAR(255) NOT NULL;',
+    parameters: undefined
+  },
+  sql: 'ALTER TABLE `data_pegawai` CHANGE `tanggal_masuk` `tanggal_masuk` VARCHAR(255) NOT NULL;',
+  parameters: {}
+}
+Unable to start server: Error
+    at Query.run (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async data_pegawai.sync (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Backend/index.js:77:9) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Deadlock found when trying to get lock; try restarting transaction
+      at Packet.asError (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packets\packet.js:788:17)
+      at Query.execute (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:552:34)
+      at PacketParser.onPacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:102:12)
+      at PacketParser.executeStart (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:109:25)
+      at Socket.emit (node:events:509:28)
+      at addChunk (node:internal/streams/readable:563:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+      at Readable.push (node:internal/streams/readable:394:5) {
+    code: 'ER_LOCK_DEADLOCK',
+    errno: 1213,
+    sqlState: '40001',
+    sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+    sql: 'ALTER TABLE `data_pegawai` CHANGE `url` `url` VARCHAR(255);',
+    parameters: undefined
+  },
+  original: Error: Deadlock found when trying to get lock; try restarting transaction
+      at Packet.asError (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packets\packet.js:788:17)
+      at Query.execute (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:552:34)
+      at PacketParser.onPacket (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:102:12)
+      at PacketParser.executeStart (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Backend\node_modules\mysql2\lib\base\connection.js:109:25)
+      at Socket.emit (node:events:509:28)
+      at addChunk (node:internal/streams/readable:563:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+      at Readable.push (node:internal/streams/readable:394:5) {
+    code: 'ER_LOCK_DEADLOCK',
+    errno: 1213,
+    sqlState: '40001',
+    sqlMessage: 'Deadlock found when trying to get lock; try restarting transaction',
+    sql: 'ALTER TABLE `data_pegawai` CHANGE `url` `url` VARCHAR(255);',
+    parameters: undefined
+  },
+  sql: 'ALTER TABLE `data_pegawai` CHANGE `url` `url` VARCHAR(255);',
+  parameters: {}
+}

@@ -8,39 +8,41 @@ import { BiSearch } from 'react-icons/bi'
 import Swal from 'sweetalert2';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { TfiPrinter } from 'react-icons/tfi'
-import { fetchLaporanGajiByMonth, fetchLaporanGajiByYear, getDataGaji, getMe } from '../../../../config/redux/action';
+import { fetchReportSalaryByMonth, fetchReportSalaryByYear, getDataSalary, getMe } from '../../../../config/redux/action';
 
 const ITEMS_PER_PAGE = 4;
 
-const DataGaji = () => {
+const DataSalary = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filterTahun, setFilterTahun] = useState("");
     const [filterBulan, setFilterBulan] = useState("");
     const [filterNama, setFilterNama] = useState("");
     const [showMessage, setShowMessage] = useState(false);
 
-    const { dataGaji } = useSelector((state) => state.dataGaji);
+    const { dataSalary } = useSelector((state) => state.dataSalary);
     const { isError, user } = useSelector((state) => state.auth);
+
+    const dataSalaryArray = Array.isArray(dataSalary) ? dataSalary : [];
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const totalPages = Math.ceil(dataGaji.length / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(dataSalaryArray.length / ITEMS_PER_PAGE);
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
 
-    const filteredDataGaji = dataGaji.filter((gajiDataPegawai) => {
+    const filteredDataSalary = dataSalaryArray.filter((salaryDataPegawai) => {
         const isMatchBulan =
             filterBulan === "" ||
-            (typeof gajiDataPegawai.bulan === 'string' &&
-                gajiDataPegawai.bulan.toLowerCase().includes(filterBulan.toLowerCase()));
+            (typeof salaryDataPegawai.month === 'string' &&
+                salaryDataPegawai.month.toLowerCase().includes(filterBulan.toLowerCase()));
         const isMatchTahun =
-            filterTahun === "" || gajiDataPegawai.tahun.toString() === filterTahun;
+            filterTahun === "" || salaryDataPegawai.tahun.toString() === filterTahun;
         const isMatchNama =
             filterNama === "" ||
-            (typeof gajiDataPegawai.nama_pegawai === 'string' &&
-                gajiDataPegawai.nama_pegawai.toLowerCase().includes(filterNama.toLowerCase()));
+            (typeof salaryDataPegawai.employeeName === 'string' &&
+                salaryDataPegawai.employeeName.toLowerCase().includes(filterNama.toLowerCase()));
         return isMatchBulan && isMatchTahun && isMatchNama;
     });
 
@@ -78,15 +80,15 @@ const DataGaji = () => {
         let monthDataFound = false;
 
         await Promise.all([
-            dispatch(fetchLaporanGajiByYear(selectedYear, () => (yearDataFound = true))),
-            dispatch(fetchLaporanGajiByMonth(selectedMonth, () => (monthDataFound = true))),
+            dispatch(fetchReportSalaryByYear(selectedYear, () => (yearDataFound = true))),
+            dispatch(fetchReportSalaryByMonth(selectedMonth, () => (monthDataFound = true))),
         ]);
         setShowMessage(true);
 
         if (yearDataFound && monthDataFound) {
             setShowMessage(false);
             navigate(
-                `/laporan/gaji/print-page?month=${selectedMonth}&year=${selectedYear}`
+                `/laporan/salary/print-page?month=${selectedMonth}&year=${selectedYear}`
             );
         } else {
             setShowMessage(false);
@@ -100,7 +102,7 @@ const DataGaji = () => {
     };
 
     useEffect(() => {
-        dispatch(getDataGaji(startIndex, endIndex));
+        dispatch(getDataSalary(startIndex, endIndex));
     }, [dispatch, startIndex, endIndex]);
 
     useEffect(() => {
@@ -111,7 +113,7 @@ const DataGaji = () => {
         if (isError) {
             navigate('/login');
         }
-        if (user && user.hak_akses !== 'admin') {
+        if (user && user.role !== 'admin') {
             navigate('/dashboard');
         }
     }, [isError, user, navigate]);
@@ -162,12 +164,12 @@ const DataGaji = () => {
     };
     return (
         <Layout>
-            <Breadcrumb pageName='Data Gaji Pegawai' />
+            <Breadcrumb pageName='Data Salary Employee' />
 
             <div className='rounded-sm border border-stroke bg-white px-5 pt-2 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-10 mt-6'>
                 <div className='border-b border-stroke py-2 dark:border-strokedark'>
                     <h3 className='font-medium text-black dark:text-white'>
-                        Filter Data Gaji Pegawai
+                        Filter Data Salary Employee
                     </h3>
                 </div>
                 <form onSubmit={handleSearch}>
@@ -222,7 +224,7 @@ const DataGaji = () => {
                         <div className='w-full md:w-1/2 flex justify-center md:justify-end'>
                             <div className='w-full md:w-auto'>
                                 <ButtonOne type='submit'>
-                                    <span>Cetak Daftar Gaji</span>
+                                    <span>Cetak Daftar Salary</span>
                                     <span>
                                         <TfiPrinter />
                                     </span>
@@ -232,17 +234,17 @@ const DataGaji = () => {
                     </div>
                 </form>
                 <div className="bg-gray-2 text-left dark:bg-meta-4 mt-6">
-                    {filteredDataGaji
+                    {filteredDataSalary
                         .reduce((uniqueEntries, data) => {
-                            const isEntryExist = uniqueEntries.find(entry => entry.bulan === data.bulan && entry.tahun === data.tahun);
+                            const isEntryExist = uniqueEntries.find(entry => entry.month === data.month && entry.tahun === data.tahun);
                             if (!isEntryExist) {
                                 uniqueEntries.push(data);
                             }
                             return uniqueEntries;
-                        }, []).map(data => (data.tahun !== 0 && data.bulan !== 0 &&
-                            <h2 className="px-4 py-2 text-black dark:text-white" key={`${data.bulan}-${data.tahun}`}>
-                                Menampilkan Data Gaji Pegawai Bulan :
-                                <span className="font-medium"> {data.bulan} </span>
+                        }, []).map(data => (data.tahun !== 0 && data.month !== 0 &&
+                            <h2 className="px-4 py-2 text-black dark:text-white" key={`${data.month}-${data.tahun}`}>
+                                Menampilkan Data Salary Employee Bulan :
+                                <span className="font-medium"> {data.month} </span>
                                 Tahun :
                                 <span className="font-medium"> {data.tahun}</span>
                             </h2>
@@ -256,7 +258,7 @@ const DataGaji = () => {
                     <div className="relative flex-2 mb-4 md:mb-0">
                         <input
                             type='text'
-                            placeholder='Cari Nama Pegawai...'
+                            placeholder='Cari Employee Name...'
                             value={filterNama}
                             onChange={handleNamaChange}
                             className='rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-10 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary left-0'
@@ -275,16 +277,16 @@ const DataGaji = () => {
                                     No
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    NIK
+                                    National ID
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    Nama <br /> Pegawai
+                                    Nama <br /> Employee
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    Jabatan
+                                    Position
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    Gaji <br /> Pokok
+                                    Salary <br /> Pokok
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
                                     Tunjangan <br />Transport
@@ -293,10 +295,10 @@ const DataGaji = () => {
                                     Uang <br /> Makan
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    Potongan
+                                    Deduction
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
-                                    Total <br /> Gaji
+                                    Total <br /> Salary
                                 </th>
                                 <th className='py-2 px-2 font-medium text-black dark:text-white'>
                                     Aksi
@@ -304,32 +306,32 @@ const DataGaji = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredDataGaji.slice(startIndex, endIndex).map((data, index) => {
+                            {filteredDataSalary.slice(startIndex, endIndex).map((data, index) => {
                                 return (
                                     <tr key={data.id}>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
                                             <p className='text-black dark:text-white'>{startIndex + index + 1}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>{data.nik}</p>
+                                            <p className='text-black dark:text-white'>{data.nationalId}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>{data.nama_pegawai}</p>
+                                            <p className='text-black dark:text-white'>{data.employeeName}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>{data.jabatan}</p>
+                                            <p className='text-black dark:text-white'>{data.position}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>Rp. {data.gaji_pokok}</p>
+                                            <p className='text-black dark:text-white'>Rp. {data.salary_pokok}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>Rp. {data.tj_transport}</p>
+                                            <p className='text-black dark:text-white'>Rp. {data.transportAllowance}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>Rp. {data.uang_makan}</p>
+                                            <p className='text-black dark:text-white'>Rp. {data.mealAllowance}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
-                                            <p className='text-black dark:text-white'>Rp. {data.potongan}</p>
+                                            <p className='text-black dark:text-white'>Rp. {data.deduction}</p>
                                         </td>
                                         <td className='border-b border-[#eee] py-5 px-4 text-center dark:border-strokedark'>
                                             <p className='text-black dark:text-white'>Rp. {data.total}</p>
@@ -338,7 +340,7 @@ const DataGaji = () => {
                                             <div className='flex items-center space-x-3.5'>
                                                 <Link
                                                     className='hover:text-black'
-                                                    to={`/data-gaji/detail-data-gaji/name/${data.nama_pegawai}`}
+                                                    to={`/data-salary/detail-data-salary/name/${data.employeeName}`}
                                                 >
                                                     <FaRegEye className="text-primary text-xl hover:text-black dark:hover:text-white" />
                                                 </Link>
@@ -354,7 +356,7 @@ const DataGaji = () => {
                 <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
                     <div className="flex items-center space-x-2">
                         <span className="text-gray-5 dark:text-gray-4 text-sm py-4">
-                            Menampilkan {startIndex + 1}-{Math.min(endIndex, filteredDataGaji.length)} data {filteredDataGaji.length} Data Gaji Pegawai
+                            Menampilkan {startIndex + 1}-{Math.min(endIndex, filteredDataSalary.length)} data {filteredDataSalary.length} Data Salary Employee
                         </span>
                     </div>
                     <div className="flex space-x-2 py-4">
@@ -380,4 +382,4 @@ const DataGaji = () => {
     )
 }
 
-export default DataGaji;
+export default DataSalary;

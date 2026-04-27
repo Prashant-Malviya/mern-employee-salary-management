@@ -1,37 +1,43 @@
-import DataPegawai from '../models/DataPegawaiModel.js'
+import Employee from '../models/DataEmployeeModel.js'
 
 export const verifyUser = async(req, res, next) =>{
-    if(!req.session.userId){
-        return res.status(401).json({msg: "Mohon Login ke Akun Anda!"});
+    if(!req.session || !req.session.userId){
+        return res.status(401).json({msg: "Please login to your account!"});
     }
     try {
-        const pegawai = await DataPegawai.findOne({
+        const employee = await Employee.findOne({
             where: {
-                id_pegawai: req.session.userId
+                employeeId: req.session.userId
             }
         });
-        if(!pegawai) return res.status(404).json({msg: "User Tidak di Temukan"});
-        req.userId = pegawai.id;
-        req.hak_akses = pegawai.hak_akses;
+        if(!employee) return res.status(404).json({msg: "User Not Found"});
+        req.userId = employee.id;
+        req.employeeId = employee.employeeId;
+        req.role = employee.role;
+        req.role = employee.role;
         next();
     } catch (err) {
         console.error(err);
-        return res.status(500).json({ msg: "Terjadi Kesalahan Pada Server" });
+        return res.status(500).json({ msg: "Server Error Occurred" });
     }
 }
 
 export const adminOnly = async (req, res, next) => {
     try {
-        const pegawai = await DataPegawai.findOne({
+        if(!req.session || !req.session.userId){
+            return res.status(401).json({msg: "Please login to your account!"});
+        }
+
+        const employee = await Employee.findOne({
             where:{
-                id_pegawai: req.session.userId
+                employeeId: req.session.userId
             }
         });
-        if(!pegawai) return res.status(404).json({msg: "Data Pegawai Tidak di Temukan"});
-        if(pegawai.hak_akses !== "admin") return res.status(403).json({msg: "Akses terlarang"});
+        if(!employee) return res.status(404).json({msg: "Employee Data Not Found"});
+        if(employee.role !== "admin") return res.status(403).json({msg: "Access denied"});
         next();
     } catch (err) {
         console.error(err);
-        return res.status(500).json({ msg: "Terjadi Kesalahan Pada Server" });
+        return res.status(500).json({ msg: "Server Error Occurred" });
     }
 }

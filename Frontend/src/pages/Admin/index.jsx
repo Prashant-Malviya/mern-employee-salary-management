@@ -1,21 +1,23 @@
-import LaporanAbsensi from './Laporan/LaporanAbsensi';
-import LaporanGaji from './Laporan/LaporanGaji';
-import SlipGaji from './Laporan/SlipGaji';
-import DataJabatan from './MasterData/DataJabatan';
-import DataPegawai from './MasterData/DataPegawai';
-import UbahPasswordAdmin from './PengaturanAdmin/UbahPasswordAdmin';
-import DataKehadiran from './Transaksi/DataKehadiran';
-import DataGaji from './Transaksi/DataGaji';
-import DataPotongan from './Transaksi/DataPotongan';
+import ReportAttendance from './Report/ReportAttendance';
+import ReportSalary from './Report/ReportSalary';
+import SlipSalary from './Report/SlipSalary';
+import DataPosition from './MasterData/DataPosition';
+import DataEmployee from './MasterData/DataEmployee';
+import ChangePasswordAdmin from './SettingsAdmin/ChangePasswordAdmin';
+import DataAttendance from './Transaction/DataAttendance';
+import DataSalary from './Transaction/DataSalary';
+import DataDeduction from './Transaction/DataDeduction';
+import OvertimeForm from './Transaction/OvertimeForm';
 
 export {
-    LaporanAbsensi,
-    LaporanGaji,
-    SlipGaji,
-    DataJabatan,
-    DataPegawai,
-    UbahPasswordAdmin,
-    DataKehadiran,
-    DataGaji,
-    DataPotongan
+    ReportAttendance,
+    ReportSalary,
+    SlipSalary,
+    DataPosition,
+    DataEmployee,
+    ChangePasswordAdmin,
+    DataAttendance,
+    DataSalary,
+    DataDeduction,
+    OvertimeForm
 };

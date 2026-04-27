@@ -17,7 +17,7 @@ const DropdownProfil = () => {
   const dropdown = useRef(null);
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
-  const [dataPegawai, setDataPegawai] = useState(null);
+  const [dataEmployee, setDataEmployee] = useState(null);
 
   const onLogout = () => {
     Swal.fire({
@@ -33,7 +33,7 @@ const DropdownProfil = () => {
         dispatch(logoutUser());
         dispatch(reset());
         Swal.fire({
-          title: 'Logout Berhasil',
+          title: 'Logout Success',
           text: 'Anda telah berhasil keluar.',
           icon: 'success',
           timer: 1500,
@@ -47,21 +47,21 @@ const DropdownProfil = () => {
   };
 
   useEffect(() => {
-    const getDataPegawai = async () => {
+    const getDataEmployee = async () => {
       try {
-        if (user && user.nama_pegawai) {
+        if (user && user.employeeName) {
           const response = await axios.get(
-            `http://localhost:5000/data_pegawai/name/${user.nama_pegawai}`
+            `http://127.0.0.1:5000/employeeData/name/${user.employeeName}`
           );
           const data = response.data;
-          setDataPegawai(data);
+          setDataEmployee(data);
         }
       } catch (error) {
         console.log(error);
       }
     };
 
-    getDataPegawai();
+    getDataEmployee();
   }, [user]);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const DropdownProfil = () => {
 
   return (
     <div className='relative'>
-      {dataPegawai && (
+      {dataEmployee && (
         <Link
           ref={trigger}
           onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -104,15 +104,15 @@ const DropdownProfil = () => {
         >
           <span className='hidden lg:block'>
             <span className='block text-sm font-medium text-black dark:text-white'>
-              {dataPegawai.nama_pegawai}
+              {dataEmployee.employeeName}
             </span>
-            <span className='block text-xs'>{dataPegawai.hak_akses}</span>
+            <span className='block text-xs'>{dataEmployee.role}</span>
           </span>
 
           <div className='h-12 w-12 rounded-full overflow-hidden'>
             <img
               className='h-full w-full object-cover'
-              src={`http://localhost:5000/images/${dataPegawai.photo}`}
+              src={`http://127.0.0.1:5000/images/${dataEmployee.photo}`}
               alt='Profil'
             />
           </div>
@@ -128,11 +128,11 @@ const DropdownProfil = () => {
           <ul className='flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark'>
             <li>
               <Link
-                to={user?.hak_akses === 'admin' ? '/ubah-password' : '/ubah-password-pegawai'}
+                to={user?.role === 'admin' ? '/change-password' : '/change-password-employee'}
                 className='flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base'
               >
                 <FiSettings className='text-xl' />
-                Pengaturan
+                Settings
               </Link>
             </li>
             <li>

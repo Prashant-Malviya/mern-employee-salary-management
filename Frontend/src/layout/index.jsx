@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux";
-import { SidebarAdmin, SidebarPegawai, Header, Footer } from '../components';
+import { SidebarAdmin, SidebarEmployee, Header, Footer } from '../components';
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -11,16 +11,16 @@ const Layout = ({ children }) => {
       {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className='flex h-screen overflow-hidden'>
         {/* <!-- ===== Sidebar Admin Start ===== --> */}
-        {user && user.hak_akses === "admin" && (
+        {user && user.role === "admin" && (
           <SidebarAdmin sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         )}
         {/* <!-- ===== Sidebar Admin End ===== --> */}
 
-        {/* <!-- ===== Sidebar Pegawai Start ===== --> */}
-        {user && user.hak_akses === "pegawai" && (
-          <SidebarPegawai sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        {/* <!-- ===== Sidebar Employee Start ===== --> */}
+        {user && user.role === "employee" && (
+          <SidebarEmployee sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         )}
-        {/* <!-- ===== Sidebar Pegawai End ===== --> */}
+        {/* <!-- ===== Sidebar Employee End ===== --> */}
 
         {/* <!-- ===== Content Area Start ===== --> */}
         <div className='relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden'>
