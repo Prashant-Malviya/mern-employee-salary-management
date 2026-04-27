@@ -1,3 +1,130 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[2m11:51:01 am[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\src\main.jsx: Missing semicolon. (18:1)
+
+  16 |     </Router>
+  17 |   </React.StrictMode>
+> 18 | )s
+     |  ^[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/src/main.jsx[39m:18:1
+      at instantiate (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:653:32)
+      at constructor (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:947:12)
+      at JSXParserMixin.raise (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:3271:19)
+      at JSXParserMixin.semicolon (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:3638:10)
+      at JSXParserMixin.parseExpressionStatement (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13098:10)
+      at JSXParserMixin.parseStatementContent (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12695:19)
+      at JSXParserMixin.parseStatementLike (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12557:17)
+      at JSXParserMixin.parseModuleItem (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12534:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13129:36)
+      at JSXParserMixin.parseBlockBody (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13122:10)
+      at JSXParserMixin.parseProgram (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12445:10)
+      at JSXParserMixin.parseTopLevel (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12435:25)
+      at JSXParserMixin.parse (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:14258:10)
+      at parse (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:14299:38)
+      at parser (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:38)
+      at normalizeFile.next (<anonymous>)
+      at run (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transformation\index.js:21:50)
+      at run.next (<anonymous>)
+      at transform (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transform.js:22:41)
+      at transform.next (<anonymous>)
+      at step (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:261:32)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:223:11)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:189:28
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\gensync-utils\async.js:68:7
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:113:33
+      at step (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:287:14)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:223:11)
+[2m11:51:01 am[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\src\main.jsx: Missing semicolon. (18:1)
+
+  16 |     </Router>
+  17 |   </React.StrictMode>
+> 18 | )s
+     |  ^[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/src/main.jsx[39m:18:1
+      at instantiate (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:653:32)
+      at constructor (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:947:12)
+      at JSXParserMixin.raise (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:3271:19)
+      at JSXParserMixin.semicolon (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:3638:10)
+      at JSXParserMixin.parseExpressionStatement (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13098:10)
+      at JSXParserMixin.parseStatementContent (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12695:19)
+      at JSXParserMixin.parseStatementLike (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12557:17)
+      at JSXParserMixin.parseModuleItem (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12534:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13129:36)
+      at JSXParserMixin.parseBlockBody (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:13122:10)
+      at JSXParserMixin.parseProgram (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12445:10)
+      at JSXParserMixin.parseTopLevel (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:12435:25)
+      at JSXParserMixin.parse (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:14258:10)
+      at parse (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\parser\lib\index.js:14299:38)
+      at parser (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:38)
+      at normalizeFile.next (<anonymous>)
+      at run (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transformation\index.js:21:50)
+      at run.next (<anonymous>)
+      at transform (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\transform.js:22:41)
+      at transform.next (<anonymous>)
+      at step (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:261:32)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:223:11)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:189:28
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\@babel\core\lib\gensync-utils\async.js:68:7
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:113:33
+      at step (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:287:14)
+      at C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (C:\Users\prash\OneDrive\Desktop\mern-employee-salary-management\Frontend\node_modules\gensync\index.js:223:11)
+Failed to resolve import "./Transaksi/OvertimeForm" from "src\pages\Admin\index.jsx". Does the file exist?
+[2m11:51:56 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./Transaksi/OvertimeForm" from "src\pages\Admin\index.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/src/pages/Admin/index.jsx[39m:10:25
+[33m  8  |  import DataGaji from "./Transaksi/DataGaji";
+  9  |  import DataPotongan from "./Transaksi/DataPotongan";
+  10 |  import OvertimeForm from "./Transaksi/OvertimeForm";
+     |                            ^
+  11 |  export { LaporanAbsensi, LaporanGaji, SlipGaji, DataJabatan, DataPegawai, UbahPasswordAdmin, DataKehadiran, DataGaji, DataPotongan, OvertimeForm };
+  12 |  [39m
+      at formatError (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43113:46)
+      at TransformContext.error (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43109:19)
+      at normalizeUrl (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41378:33)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TransformContext.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41512:47)
+      at async Object.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43387:30)
+      at async loadAndTransform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41105:29)
+[2m11:51:57 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./Transaksi/OvertimeForm" from "src\pages\Admin\index.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/src/pages/Admin/index.jsx[39m:10:25
+[33m  8  |  import DataGaji from "./Transaksi/DataGaji";
+  9  |  import DataPotongan from "./Transaksi/DataPotongan";
+  10 |  import OvertimeForm from "./Transaksi/OvertimeForm";
+     |                            ^
+  11 |  export { LaporanAbsensi, LaporanGaji, SlipGaji, DataJabatan, DataPegawai, UbahPasswordAdmin, DataKehadiran, DataGaji, DataPotongan, OvertimeForm };
+  12 |  [39m
+      at formatError (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43113:46)
+      at TransformContext.error (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43109:19)
+      at normalizeUrl (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41378:33)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TransformContext.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41512:47)
+      at async Object.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43387:30)
+      at async loadAndTransform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41105:29)
+[2m11:52:22 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./Transaksi/OvertimeForm" from "src\pages\Admin\index.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/src/pages/Admin/index.jsx[39m:10:25
+[33m  8  |  import DataGaji from "./Transaksi/DataGaji";
+  9  |  import DataPotongan from "./Transaksi/DataPotongan";
+  10 |  import OvertimeForm from "./Transaksi/OvertimeForm";
+     |                            ^
+  11 |  export { LaporanAbsensi, LaporanGaji, SlipGaji, DataJabatan, DataPegawai, UbahPasswordAdmin, DataKehadiran, DataGaji, DataPotongan, OvertimeForm };
+  12 |  [39m
+      at formatError (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43113:46)
+      at TransformContext.error (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43109:19)
+      at normalizeUrl (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41378:33)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TransformContext.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41512:47)
+      at async Object.transform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:43387:30)
+      at async loadAndTransform (file:///C:/Users/prash/OneDrive/Desktop/mern-employee-salary-management/Frontend/node_modules/vite/dist/node/chunks/dep-79892de8.js:41105:29)
