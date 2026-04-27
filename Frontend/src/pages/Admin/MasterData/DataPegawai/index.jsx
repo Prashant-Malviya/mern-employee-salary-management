@@ -233,16 +233,16 @@ const DataPegawai = () => {
                 </button>
             </div>
             <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1 mt-6">
-                <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
-                    <div className="relative flex-1 md:mr-2 mb-4 md:mb-0">
+                <div className="flex justify-between items-stretch mt-4 flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div className="relative flex-1 md:mr-2">
                         <div className="relative">
-                            <span className="absolute top-1/2 left-48 z-30 -translate-y-1/2 text-xl">
+                            <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2 text-xl">
                                 <MdOutlineKeyboardArrowDown />
                             </span>
                             <select
                                 value={filterStatus}
                                 onChange={handleFilterStatus}
-                                className="relative appearance-none rounded border border-stroke bg-transparent py-3 px-8 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                                className="relative w-full appearance-none rounded border border-stroke bg-transparent py-3 px-8 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input md:w-auto"
                             >
                                 <option value="">Status</option>
                                 <option value="Karyawan Tetap">Karyawan Tetap</option>
@@ -256,7 +256,7 @@ const DataPegawai = () => {
                             placeholder="Cari Nama Pegawai..."
                             value={searchKeyword}
                             onChange={handleSearch}
-                            className="rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-10 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary left-0"
+                            className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-10 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary left-0"
                         />
                         <span className="absolute left-2 py-3 text-xl">
                             <BiSearch />
@@ -264,10 +264,10 @@ const DataPegawai = () => {
                     </div>
                 </div>
 
-                <div className="max-w-full overflow-x-auto py-4">
-                    <table className="w-full table-auto">
+                <div className="-mx-5 max-w-[calc(100%+2.5rem)] overflow-x-auto py-4 px-5 sm:mx-0 sm:max-w-full sm:px-0">
+                    <table className="min-w-[1120px] w-full table-auto">
                         <thead>
-                            <tr className="bg-gray-2 text-left dark:bg-meta-4">
+                            <tr className="bg-gray-2 text-left dark:bg-meta-4 whitespace-nowrap">
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">No</th>
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">Photo</th>
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">NIK</th>
