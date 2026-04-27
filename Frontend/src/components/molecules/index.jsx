@@ -1,47 +1,47 @@
 import Banner from './Banner';
 import DefaultDashboard from './DefaultDashboard';
-import DetailDataGaji from './DetailDataGaji';
+import DetailDataSalary from './DetailDataSalary';
 import Footer from './Footer';
-import FormAddDataJabatan from "./Form/FormDataJabatan/FormAddDataJabatan";
-import FormEditDataJabatan from "./Form/FormDataJabatan/FormEditDataJabatan";
-import FormAddDataKehadiran from "./Form/FormDataKehadiran/FormAddDataKehadiran";
-import FormEditDataKehadiran from "./Form/FormDataKehadiran/FormEditDataKehadiran";
-import FormAddDataPegawai from "./Form/FormDataPegawai/FormAddDataPegawai";
-import FormEditDataPegawai from "./Form/FormDataPegawai/FormEditDataPegawai";
-import FormAddDataPotongan from "./Form/FormDataPotongan/FormAddDataPotongan";
-import FormEditDataPotongan from "./Form/FormDataPotongan/FormEditDataPotongan";
+import FormAddDataPosition from "./Form/FormDataPosition/FormAddDataPosition";
+import FormEditDataPosition from "./Form/FormDataPosition/FormEditDataPosition";
+import FormAddDataAttendance from "./Form/FormDataAttendance/FormAddDataAttendance";
+import FormEditDataAttendance from "./Form/FormDataAttendance/FormEditDataAttendance";
+import FormAddDataEmployee from "./Form/FormDataEmployee/FormAddDataEmployee";
+import FormEditDataEmployee from "./Form/FormDataEmployee/FormEditDataEmployee";
+import FormAddDataDeduction from "./Form/FormDataDeduction/FormAddDataDeduction";
+import FormEditDataDeduction from "./Form/FormDataDeduction/FormEditDataDeduction";
 import Header from './Header';
 import Navbar from './Navbar';
 import NotFound from './NotFound';
-import PrintPdfDataGajiPegawai from './PrintPdf/PrintPdfDataGajiPegawai'
-import PrintPdfLaporanGaji from './PrintPdf/PrintPdfLaporanGaji';
-import PrintPdfSlipGaji from './PrintPdf/PrintPdfSlipGaji';
-import PrintPdfLaporanAbsensi from './PrintPdf/PrintPdfLaporanAbsensi';
+import PrintPdfDataSalaryEmployee from './PrintPdf/PrintPdfDataSalaryEmployee'
+import PrintPdfReportSalary from './PrintPdf/PrintPdfReportSalary';
+import PrintPdfSlipSalary from './PrintPdf/PrintPdfSlipSalary';
+import PrintPdfReportAttendance from './PrintPdf/PrintPdfReportAttendance';
 import SidebarAdmin from './Sidebar/SidebarAdmin';
-import SidebarPegawai from './Sidebar/SidebarPegawai';
+import SidebarEmployee from './Sidebar/SidebarEmployee';
 import SidebarLinkGroup from './Sidebar/SidebarLinkGroup';
 
 export {
     Banner,
     DefaultDashboard,
-    DetailDataGaji,
+    DetailDataSalary,
     Footer,
-    FormAddDataJabatan,
-    FormAddDataKehadiran,
-    FormEditDataKehadiran,
-    FormEditDataJabatan,
-    FormAddDataPegawai,
-    FormEditDataPegawai,
-    FormAddDataPotongan,
-    FormEditDataPotongan,
+    FormAddDataPosition,
+    FormAddDataAttendance,
+    FormEditDataAttendance,
+    FormEditDataPosition,
+    FormAddDataEmployee,
+    FormEditDataEmployee,
+    FormAddDataDeduction,
+    FormEditDataDeduction,
     Header,
     Navbar,
     NotFound,
-    PrintPdfDataGajiPegawai,
-    PrintPdfLaporanGaji,
-    PrintPdfSlipGaji,
-    PrintPdfLaporanAbsensi,
+    PrintPdfDataSalaryEmployee,
+    PrintPdfReportSalary,
+    PrintPdfSlipSalary,
+    PrintPdfReportAttendance,
     SidebarAdmin,
-    SidebarPegawai,
+    SidebarEmployee,
     SidebarLinkGroup
 };

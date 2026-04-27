@@ -7,7 +7,7 @@ import argon2 from 'argon2';
 
 import SequelizeStore from 'connect-session-sequelize';
 import FileUpload from 'express-fileupload';
-import Employee from './models/DataPegawaiModel.js';
+import Employee from './models/DataEmployeeModel.js';
 
 import UserRoute from './routes/UserRoute.js';
 import AuthRoute from './routes/AuthRoute.js';

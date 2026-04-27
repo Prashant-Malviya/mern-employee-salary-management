@@ -1,4 +1,4 @@
-import Employee from '../models/DataPegawaiModel.js'
+import Employee from '../models/DataEmployeeModel.js'
 
 export const verifyUser = async(req, res, next) =>{
     if(!req.session || !req.session.userId){
@@ -14,7 +14,7 @@ export const verifyUser = async(req, res, next) =>{
         req.userId = employee.id;
         req.employeeId = employee.employeeId;
         req.role = employee.role;
-        req.hak_akses = employee.role;
+        req.role = employee.role;
         next();
     } catch (err) {
         console.error(err);

@@ -19,7 +19,7 @@ function Login() {
               />
             </span>
             <p className="text-black dark:text-white 2xl:px-20">
-              Sistem Penggajian Karyawan Online
+              Sistem Payroll Employee Online
               <br /> PT. Humpuss Karbometil Selulosa
             </p>
             <img className="mt-15 inline-block" src={LoginImg} alt="Logo" />

@@ -1,17 +1,14 @@
-import Employee from "../models/DataPegawaiModel.js";
+import Employee from "../models/DataEmployeeModel.js";
 import argon2 from "argon2";
 
 const formatEmployeeAuth = (employee) => ({
   id: employee.id,
   employeeId: employee.employeeId,
-  id_pegawai: employee.employeeId,
   nationalId: employee.nationalId,
-  nik: employee.nationalId,
   employeeName: employee.employeeName,
-  nama_pegawai: employee.employeeName,
   username: employee.username,
   role: employee.role,
-  hak_akses: employee.role
+  role: employee.role
 });
 
 export const Login = async (req, res) => {

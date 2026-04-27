@@ -1,6 +1,6 @@
 import { Op } from 'sequelize';
 import Overtime from '../models/OvertimeModel.js';
-import Employee from '../models/DataPegawaiModel.js';
+import Employee from '../models/DataEmployeeModel.js';
 
 const getLocalDate = (value) => {
     if (!value) return null;
