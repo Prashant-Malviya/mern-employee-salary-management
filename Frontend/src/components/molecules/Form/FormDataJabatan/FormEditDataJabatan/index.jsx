@@ -24,10 +24,10 @@ const FormEditDataJabatan = () => {
         const getUserById = async () => {
             try {
                 const response = await axios.get(`http://127.0.0.1:5000/data_jabatan/${id}`);
-                setNamaJabatan(response.data.nama_jabatan);
-                setGajiPokok(response.data.gaji_pokok);
-                setTjTransport(response.data.tj_transport);
-                setUangMakan(response.data.uang_makan);
+                setNamaJabatan(response.data.nama_jabatan || response.data.positionName || '');
+                setGajiPokok(response.data.gaji_pokok || response.data.baseSalary || '');
+                setTjTransport(response.data.tj_transport || response.data.transportAllowance || '');
+                setUangMakan(response.data.uang_makan || response.data.mealAllowance || '');
             } catch (error) {
                 if (error.response) {
                     setMsg(error.response.data.msg);
@@ -37,8 +37,32 @@ const FormEditDataJabatan = () => {
         getUserById();
     }, [id]);
 
+    const validatePositiveAmounts = () => {
+        const fields = [
+            { label: 'Gaji Pokok', value: gajiPokok },
+            { label: 'Tunjangan Transport', value: tjTransport },
+            { label: 'Uang Makan', value: uangMakan },
+        ];
+
+        const invalidField = fields.find((field) => Number(field.value) <= 0);
+
+        if (invalidField) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: `${invalidField.label} harus lebih besar dari 0`,
+                confirmButtonText: 'Ok',
+            });
+            return false;
+        }
+
+        return true;
+    };
+
     const updateDataJabatan = async (e) => {
         e.preventDefault();
+        if (!validatePositiveAmounts()) return;
+
         try {
             const formData = new FormData();
             formData.append('nama_jabatan', namaJabatan);
@@ -123,6 +147,7 @@ const FormEditDataJabatan = () => {
                                             value={gajiPokok}
                                             onChange={(e) => setGajiPokok(e.target.value)}
                                             required
+                                            min='1'
                                             placeholder='Masukkan gaji pokok'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
@@ -141,6 +166,7 @@ const FormEditDataJabatan = () => {
                                             value={tjTransport}
                                             onChange={(e) => setTjTransport(e.target.value)}
                                             required
+                                            min='1'
                                             placeholder='Masukkan tunjangan transport'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
@@ -157,6 +183,7 @@ const FormEditDataJabatan = () => {
                                             value={uangMakan}
                                             onChange={(e) => setUangMakan(e.target.value)}
                                             required
+                                            min='1'
                                             placeholder='Masukkan uang makan'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />

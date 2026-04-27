@@ -5,6 +5,49 @@ import SalaryDeduction from "../models/PotonganGajiModel.js";
 import moment from "moment";
 import "moment/locale/id.js";
 
+const formatDeduction = (deduction) => {
+  const data = deduction.toJSON ? deduction.toJSON() : deduction;
+
+  return {
+    ...data,
+    potongan: data.deductionName,
+    jml_potongan: data.deductionAmount,
+  };
+};
+
+const readDeductionPayload = (body) => ({
+  id: body.id,
+  deductionName: body.deductionName || body.potongan,
+  deductionAmount: body.deductionAmount ?? body.jml_potongan,
+});
+
+const validatePositiveAmount = (value, label) => {
+  const amount = Number(value);
+
+  if (!Number.isFinite(amount) || amount <= 0) {
+    return { error: `${label} must be a positive number` };
+  }
+
+  return { value: amount };
+};
+
+const validateDeductionPayload = (payload) => {
+  if (!payload.deductionName) {
+    return { error: "Deduction name is required" };
+  }
+
+  const deductionAmount = validatePositiveAmount(payload.deductionAmount, "Deduction amount");
+  if (deductionAmount.error) return { error: deductionAmount.error };
+
+  return {
+    value: {
+      id: payload.id,
+      deductionName: payload.deductionName,
+      deductionAmount: deductionAmount.value,
+    }
+  };
+};
+
 // Get all attendance data
 export const viewDataKehadiran = async (req, res) => {
   let resultDataKehadiran = [];
@@ -184,7 +227,14 @@ export const deleteDataKehadiran = async (req, res) => {
 
 // Create salary deduction
 export const createDataPotonganGaji = async (req, res) => {
-  const { id, deductionName, deductionAmount } = req.body;
+  const validation = validateDeductionPayload(readDeductionPayload(req.body));
+
+  if (validation.error) {
+    return res.status(400).json({ msg: validation.error });
+  }
+
+  const { id, deductionName, deductionAmount } = validation.value;
+
   try {
     const existingDeduction = await SalaryDeduction.findOne({
       where: {
@@ -197,12 +247,15 @@ export const createDataPotonganGaji = async (req, res) => {
       await SalaryDeduction.create({
         id: id,
         deductionName: deductionName,
-        deductionAmount: deductionAmount.toLocaleString(),
+        deductionAmount: deductionAmount,
       });
-      res.json({ msg: "Add Salary Deduction Data Successful" });
+      res.json({
+        msg: "Add Salary Deduction Data Successful",
+        message: "Add Salary Deduction Data Successful",
+      });
     }
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ msg: error.message });
   }
 };
 
@@ -212,9 +265,9 @@ export const viewDataPotongan = async (req, res) => {
     const deductionData = await SalaryDeduction.findAll({
       attributes: ["id", "deductionName", "deductionAmount"],
     });
-    res.json(deductionData);
+    res.json(deductionData.map(formatDeduction));
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ msg: error.message });
   }
 };
 
@@ -227,21 +280,39 @@ export const viewDataPotonganByID = async (req, res) => {
         id: req.params.id,
       },
     });
-    res.json(deductionData);
+    if (!deductionData) {
+      return res.status(404).json({ msg: "Deduction data not found" });
+    }
+
+    res.json(formatDeduction(deductionData));
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ msg: error.message });
   }
 };
 
 // Update salary deduction
 export const updateDataPotongan = async (req, res) => {
   try {
-    await SalaryDeduction.update(req.body, {
+    const validation = validateDeductionPayload(readDeductionPayload(req.body));
+
+    if (validation.error) {
+      return res.status(400).json({ msg: validation.error });
+    }
+
+    const { deductionName, deductionAmount } = validation.value;
+
+    await SalaryDeduction.update({
+      deductionName,
+      deductionAmount,
+    }, {
       where: {
         id: req.params.id,
       },
     });
-    res.status(200).json({ message: "Deduction data updated successfully" });
+    res.status(200).json({
+      msg: "Deduction data updated successfully",
+      message: "Deduction data updated successfully",
+    });
   } catch (error) {
     console.log(error.message);
   }

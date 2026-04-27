@@ -20,6 +20,16 @@ const FormEditDataPotongan = () => {
 
     const updateDataPotongan = async (e) => {
         e.preventDefault();
+        if (Number(jmlPotongan) <= 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: 'Jumlah Potongan harus lebih besar dari 0',
+                confirmButtonText: 'Ok',
+            });
+            return;
+        }
+
         try {
             const formData = new FormData();
             formData.append('potongan', potongan);
@@ -52,8 +62,8 @@ const FormEditDataPotongan = () => {
         const getDataById = async () => {
             try {
                 const response = await axios.get(`http://127.0.0.1:5000/data_potongan/${id}`);
-                setPotongan(response.data.potongan);
-                setJmlPotongan(response.data.jml_potongan);
+                setPotongan(response.data.potongan || response.data.deductionName || '');
+                setJmlPotongan(response.data.jml_potongan || response.data.deductionAmount || '');
             } catch (error) {
                 if (error.response) {
                     setMsg(error.response.data.msg);
@@ -119,6 +129,7 @@ const FormEditDataPotongan = () => {
                                             value={jmlPotongan}
                                             onChange={(e) => setJmlPotongan(e.target.value)}
                                             required
+                                            min='1'
                                             placeholder='Masukkan jumlah potongan'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
