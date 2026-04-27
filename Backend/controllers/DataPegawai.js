@@ -2,6 +2,8 @@ import Employee from "../models/DataPegawaiModel.js";
 import argon2 from "argon2";
 import path from "path";
 
+const DESIGNATION_OPTIONS = ["Mason", "Electrician", "Plumber", "Supervisor", "Helper"];
+
 const formatEmployee = (employee) => {
     const data = employee.toJSON ? employee.toJSON() : employee;
 
@@ -17,6 +19,7 @@ const formatEmployee = (employee) => {
         jenis_kelamin: data.gender,
         position: data.position,
         jabatan: data.position,
+        designation: data.designation,
         joinDate: data.joinDate,
         tanggal_masuk: data.joinDate,
         role: data.role,
@@ -30,10 +33,13 @@ const getEmployeePayload = (body) => ({
     username: body.username,
     gender: body.gender || body.jenis_kelamin,
     position: body.position || body.jabatan,
+    designation: body.designation,
     joinDate: body.joinDate || body.tanggal_masuk,
     status: body.status,
     role: body.role || body.hak_akses
 });
+
+const isValidDesignation = (designation) => DESIGNATION_OPTIONS.includes(designation);
 
 // Get all employees
 export const getDataPegawai = async (req, res) => {
@@ -109,7 +115,7 @@ export const getDataPegawaiByName = async (req, res) => {
 export const createDataPegawai = async (req, res) => {
     const {
         nationalId, employeeName, username,
-        gender, position, joinDate, status, role
+        gender, position, designation, joinDate, status, role
     } = getEmployeePayload(req.body);
     const { password, confPassword } = req.body;
 
@@ -117,8 +123,12 @@ export const createDataPegawai = async (req, res) => {
         return res.status(400).json({ msg: "Password and Confirm Password do not match" });
     }
 
-    if (!nationalId || !employeeName || !username || !password || !gender || !position || !joinDate || !status || !role) {
+    if (!nationalId || !employeeName || !username || !password || !gender || !position || !designation || !joinDate || !status || !role) {
         return res.status(400).json({ msg: "All employee fields are required" });
+    }
+
+    if (!isValidDesignation(designation)) {
+        return res.status(400).json({ msg: "Designation must be Mason, Electrician, Plumber, Supervisor, or Helper" });
     }
 
     if (!req.files || !req.files.photo) {
@@ -155,6 +165,7 @@ export const createDataPegawai = async (req, res) => {
                 password: hashPassword,
                 gender: gender,
                 position: position,
+                designation: designation,
                 joinDate: joinDate,
                 status: status,
                 photo: fileName,
@@ -182,11 +193,15 @@ export const updateDataPegawai = async (req, res) => {
     if (!employee) return res.status(404).json({ msg: "Employee data not found" });
     const {
         nationalId, employeeName, username,
-        gender, position, joinDate, status, role
+        gender, position, designation, joinDate, status, role
     } = getEmployeePayload(req.body);
 
-    if (!nationalId || !employeeName || !username || !gender || !position || !joinDate || !status || !role) {
+    if (!nationalId || !employeeName || !username || !gender || !position || !designation || !joinDate || !status || !role) {
         return res.status(400).json({ msg: "All employee fields are required" });
+    }
+
+    if (!isValidDesignation(designation)) {
+        return res.status(400).json({ msg: "Designation must be Mason, Electrician, Plumber, Supervisor, or Helper" });
     }
 
     try {
@@ -196,6 +211,7 @@ export const updateDataPegawai = async (req, res) => {
             username: username,
             gender: gender,
             position: position,
+            designation: designation,
             joinDate: joinDate,
             status: status,
             role: role

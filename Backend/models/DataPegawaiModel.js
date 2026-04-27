@@ -42,6 +42,11 @@ const Employee = db.define('data_pegawai', {
         field: 'jabatan', // Database column: jabatan
         allowNull: false
     },
+    designation: {
+        type: DataTypes.STRING(50),
+        defaultValue: 'Helper',
+        allowNull: false
+    },
     joinDate: {
         type: DataTypes.STRING,
         field: 'tanggal_masuk', // Database column: tanggal_masuk
