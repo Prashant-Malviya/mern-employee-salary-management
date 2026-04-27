@@ -4,39 +4,39 @@ import {
     viewDataGajiPegawaiByYear
 } from "./TransaksiController.js"
 
-// method untuk melihat laporan gaji pegawai
+// View salary report
 export const viewLaporanGajiPegawai = async(req, res) => {
     try {
-        const laporanGajiPegawai = await getDataGajiPegawai(req, res);
-        res.status(200).json(laporanGajiPegawai);
+        const salaryReport = await getDataGajiPegawai(req, res);
+        res.status(200).json(salaryReport);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
 
-// method untuk melihat laporan gaji pegawai berdasarkan bulan
+// View salary report by month
 export const viewLaporanGajiPegawaiByMonth = async (req, res) => {
     try {
         const { month } = req.params;
-        const dataLaporanGajiByMonth = await getDataGajiPegawai(req, res);
+        const salaryDataByMonth = await getDataGajiPegawai(req, res);
 
-        const filteredData = dataLaporanGajiByMonth.filter((data) => {
+        const filteredData = salaryDataByMonth.filter((data) => {
             return data.bulan.toLowerCase() === month.toLowerCase();
         });
 
         if (filteredData.length === 0) {
-            res.status(404).json({ msg: 'Data tidak ditemukan' });
+            res.status(404).json({ msg: 'Data not found' });
         } else {
             const formattedData = filteredData.map((data) => {
                 return {
                     bulan: data.bulan,
-                    nama_pegawai: data.nama_pegawai,
-                    jabatan: data.jabatan_pegawai,
-                    gaji_pokok: data.gaji_pokok,
-                    tj_transport: data.tj_transport,
-                    uang_makan: data.uang_makan,
-                    potongan: data.potongan,
-                    total_gaji: data.total
+                    employeeName: data.employeeName,
+                    position: data.employeePosition,
+                    baseSalary: data.baseSalary,
+                    transportAllowance: data.transportAllowance,
+                    mealAllowance: data.mealAllowance,
+                    deduction: data.deduction,
+                    totalSalary: data.total
                 };
             });
             res.json(formattedData);
@@ -46,11 +46,7 @@ export const viewLaporanGajiPegawaiByMonth = async (req, res) => {
     }
 };
 
-
-
-
-
-// method untuk melihat laporan gaji pegawai berdasarkan tahun
+// View salary report by year
 export const viewLaporanGajiPegawaiByYear = async (req, res) => {
     try {
          await viewDataGajiPegawaiByYear(req, res);
@@ -60,14 +56,14 @@ export const viewLaporanGajiPegawaiByYear = async (req, res) => {
 };
 
 
-// method untuk melihat laporan gaji pegawai berdasarkan nama
+// View salary report by name
 export const viewLaporanGajiPegawaiByName = async (req, res) => {
     try {
-        const dataGajiPegawai = await getDataGajiPegawai(req, res);
+        const salaryData = await getDataGajiPegawai(req, res);
         const name = req.params.name.toLowerCase();
 
-        const foundData = dataGajiPegawai.filter((data) => {
-          const formattedName = data.nama_pegawai.toLowerCase();
+        const foundData = salaryData.filter((data) => {
+          const formattedName = data.employeeName.toLowerCase();
           const searchKeywords = name.split(" ");
 
           return searchKeywords.every((keyword) => formattedName.includes(keyword));
@@ -84,29 +80,29 @@ export const viewLaporanGajiPegawaiByName = async (req, res) => {
       }
   };
 
-// method untuk melihat laporan absensi pegawai berdasarkan bulan (menggunakan DROP DOWN)
+// View attendance report by month (using dropdown)
 export const viewLaporanAbsensiPegawaiByMonth = async (req, res) => {
     try {
-        const dataAbsensiByMonth = await getDataKehadiran();
+        const attendanceDataByMonth = await getDataKehadiran();
         const { month } = req.params;
 
-        const dataAbsensi = dataAbsensiByMonth.filter((absensi) => absensi.bulan.toLowerCase() === month.toLowerCase()).map((absensi) => {
+        const attendanceData = attendanceDataByMonth.filter((attendance) => attendance.bulan.toLowerCase() === month.toLowerCase()).map((attendance) => {
             return {
-                tahun: absensi.year,
-                bulan: absensi.bulan,
-                nik: absensi.nik,
-                nama_pegawai: absensi.nama_pegawai,
-                jabatan_pegawai: absensi.jabatan_pegawai,
-                hadir: absensi.hadir,
-                sakit: absensi.sakit,
-                alpha: absensi.alpha
+                tahun: attendance.year,
+                bulan: attendance.bulan,
+                nationalId: attendance.nationalId,
+                employeeName: attendance.employeeName,
+                employeePosition: attendance.employeePosition,
+                present: attendance.present,
+                sick: attendance.sick,
+                absent: attendance.absent
             };
         });
 
-        if (dataAbsensi.length === 0) {
-            res.status(404).json({ msg: 'Data tidak ditemukan' });
+        if (attendanceData.length === 0) {
+            res.status(404).json({ msg: 'Data not found' });
         } else {
-            res.json(dataAbsensi);
+            res.json(attendanceData);
         }
     } catch (error) {
         res.status(500).json({ msg: 'Internal Server Error' });
@@ -114,45 +110,43 @@ export const viewLaporanAbsensiPegawaiByMonth = async (req, res) => {
 };
 
 
-// method untuk melihat laporan absensi pegawai berdasarkan tahun
+// View attendance report by year
 export const viewLaporanAbsensiPegawaiByYear = async (req, res) => {
     try {
-        const dataAbsensiByYear = await getDataKehadiran();
+        const attendanceDataByYear = await getDataKehadiran();
         const { year } = req.params;
 
-        const dataAbsensi = dataAbsensiByYear.filter((absensi) => absensi.tahun.toString() === year.toString()).map((absensi) => {
+        const attendanceData = attendanceDataByYear.filter((attendance) => attendance.tahun.toString() === year.toString()).map((attendance) => {
             return {
-                tahun: absensi.tahun,
-                bulan: absensi.bulan,
-                nik: absensi.nik,
-                nama_pegawai: absensi.nama_pegawai,
-                jabatan_pegawai: absensi.jabatan_pegawai,
-                hadir: absensi.hadir,
-                sakit: absensi.sakit,
-                alpha: absensi.alpha
+                tahun: attendance.year,
+                bulan: attendance.bulan,
+                nationalId: attendance.nationalId,
+                employeeName: attendance.employeeName,
+                employeePosition: attendance.employeePosition,
+                present: attendance.present,
+                sick: attendance.sick,
+                absent: attendance.absent
             };
         });
 
-        if (dataAbsensi.length === 0) {
-            res.status(404).json({ msg: 'Data tidak ditemukan' });
+        if (attendanceData.length === 0) {
+            res.status(404).json({ msg: 'Data not found' });
         } else {
-            res.json(dataAbsensi);
+            res.json(attendanceData);
         }
     } catch (error) {
         res.status(500).json({ msg: 'Internal Server Error' });
     }
 };
 
-
-
-// method untuk melihat Slip Gaji Pegawai By Name
+// View Salary Slip by Name
 export const viewSlipGajiByName = async (req, res) => {
     try {
-        const dataGajiPegawai = await getDataGajiPegawai(req, res);
+        const salaryData = await getDataGajiPegawai(req, res);
         const name = req.params.name.toLowerCase();
 
-        const foundData = dataGajiPegawai.filter((data) => {
-          const formattedName = data.nama_pegawai.toLowerCase();
+        const foundData = salaryData.filter((data) => {
+          const formattedName = data.employeeName.toLowerCase();
           const searchKeywords = name.split(" ");
 
           return searchKeywords.every((keyword) => formattedName.includes(keyword));
@@ -169,30 +163,30 @@ export const viewSlipGajiByName = async (req, res) => {
       }
 }
 
-// method untuk melihat Slip Gaji Pegawai By Month
+// View Salary Slip by Month
 export const viewSlipGajiByMonth = async (req, res) => {
     try {
         const { month } = req.params;
-        const dataLaporanGajiByMonth = await getDataGajiPegawai(req, res);
+        const salaryDataByMonth = await getDataGajiPegawai(req, res);
 
-        const filteredData = dataLaporanGajiByMonth.filter((data) => {
+        const filteredData = salaryDataByMonth.filter((data) => {
             return data.bulan.toLowerCase() === month.toLowerCase();
         });
 
         if (filteredData.length === 0) {
-            res.status(404).json({ msg: `Data dengan bulan ${month} tidak ditemukan ` });
+            res.status(404).json({ msg: `Data for month ${month} not found` });
         } else {
             const formattedData = filteredData.map((data) => {
                 return {
                     bulan: data.bulan,
                     tahun: data.tahun,
-                    nama_pegawai: data.nama_pegawai,
-                    jabatan: data.jabatan,
-                    gaji_pokok: data.gaji_pokok,
-                    tj_transport: data.tj_transport,
-                    uang_makan: data.uang_makan,
-                    potongan: data.potongan,
-                    total_gaji: data.total
+                    employeeName: data.employeeName,
+                    position: data.position,
+                    baseSalary: data.baseSalary,
+                    transportAllowance: data.transportAllowance,
+                    mealAllowance: data.mealAllowance,
+                    deduction: data.deduction,
+                    totalSalary: data.total
                 };
             });
             res.json(formattedData);
@@ -202,7 +196,7 @@ export const viewSlipGajiByMonth = async (req, res) => {
     }
 }
 
-// method untuk melihat Slip Gaji Pegawai By Year
+// View Salary Slip by Year
 export const viewSlipGajiByYear = async (req, res) => {
     try {
         await viewDataGajiPegawaiByYear(req, res);

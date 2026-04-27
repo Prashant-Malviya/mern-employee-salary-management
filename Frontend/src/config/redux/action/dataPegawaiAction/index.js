@@ -24,7 +24,9 @@ const API_URL = 'http://localhost:5000';
 export const getDataPegawai = () => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`${API_URL}/data_pegawai`);
+            const response = await axios.get(`${API_URL}/data_pegawai`, {
+                withCredentials: true
+            });
             dispatch({
                 type: GET_DATA_PEGAWAI_SUCCESS,
                 payload: response.data
@@ -58,7 +60,9 @@ export const pegawaiImage = () => {
 export const getDataPegawaiById = (id) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`${API_URL}/data_pegawai/id/${id}`);
+            const response = await axios.get(`${API_URL}/data_pegawai/id/${id}`, {
+                withCredentials: true
+            });
             dispatch({
                 type: GET_DATA_PEGAWAI_BY_ID_SUCCESS,
                 payload: response.data
@@ -75,7 +79,9 @@ export const getDataPegawaiById = (id) => {
 export const getDataPegawaiByNik = (nik) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`${API_URL}/data_pegawai/nik/${nik}`);
+            const response = await axios.get(`${API_URL}/data_pegawai/nik/${nik}`, {
+                withCredentials: true
+            });
             dispatch({
                 type: GET_DATA_PEGAWAI_BY_NIK_SUCCESS,
                 payload: response.data
@@ -92,7 +98,9 @@ export const getDataPegawaiByNik = (nik) => {
 export const getDataPegawaiByName = (nama_pegawai) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`${API_URL}/data_pegawai/name/${nama_pegawai}`);
+            const response = await axios.get(`${API_URL}/data_pegawai/name/${nama_pegawai}`, {
+                withCredentials: true
+            });
             dispatch({
                 type: GET_DATA_PEGAWAI_BY_NAME_SUCCESS,
                 payload: response.data
@@ -114,7 +122,8 @@ export const createDataPegawai = (formData, navigate) => {
             const response = await axios.post(`${API_URL}/data_pegawai`, formData, {
                 headers: {
                     "Content-type": "multipart/form-data"
-                }
+                },
+                withCredentials: true
             });
             dispatch({
                 type: CREATE_DATA_PEGAWAI_SUCCESS,
@@ -135,7 +144,9 @@ export const createDataPegawai = (formData, navigate) => {
 export const updateDataPegawai = (id, data) => {
     return async (dispatch) => {
         try {
-            const response = await axios.put(`${API_URL}/data_pegawai/${id}`, data);
+            const response = await axios.patch(`${API_URL}/data_pegawai/${id}`, data, {
+                withCredentials: true
+            });
             dispatch({
                 type: UPDATE_DATA_PEGAWAI_SUCCESS,
                 payload: response.data
@@ -152,7 +163,9 @@ export const updateDataPegawai = (id, data) => {
 export const deleteDataPegawai = (id) => {
     return async (dispatch) => {
         try {
-            const response = await axios.delete(`${API_URL}/data_pegawai/${id}`);
+            const response = await axios.delete(`${API_URL}/data_pegawai/${id}`, {
+                withCredentials: true
+            });
             dispatch({
                 type: DELETE_DATA_PEGAWAI_SUCCESS,
                 payload: response.data

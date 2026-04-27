@@ -3,21 +3,26 @@ import db from '../config/Database.js';
 
 const {DataTypes} = Sequelize;
 
-const DataPegawai = db.define('data_pegawai', {
-    id_pegawai:{
+// Employee model - maps to Indonesian database column 'data_pegawai'
+// Field mapping: English property name -> Indonesian database column name
+const Employee = db.define('data_pegawai', {
+    employeeId: {
         type: DataTypes.STRING,
+        field: 'id_pegawai', // Database column: id_pegawai
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
-        validate:{
+        validate: {
             notEmpty: true
         }
     },
-    nik: {
+    nationalId: {
         type: DataTypes.STRING(16),
+        field: 'nik', // Database column: nik
         allowNull: false
     },
-    nama_pegawai: {
+    employeeName: {
         type: DataTypes.STRING(100),
+        field: 'nama_pegawai', // Database column: nama_pegawai
         allowNull: false
     },
     username: {
@@ -27,16 +32,19 @@ const DataPegawai = db.define('data_pegawai', {
     password: {
         type: DataTypes.STRING
     },
-    jenis_kelamin: {
+    gender: {
         type: DataTypes.STRING(15),
+        field: 'jenis_kelamin', // Database column: jenis_kelamin
         allowNull: false
     },
-    jabatan: {
+    position: {
         type: DataTypes.STRING(50),
+        field: 'jabatan', // Database column: jabatan
         allowNull: false
     },
-    tanggal_masuk: {
+    joinDate: {
         type: DataTypes.STRING,
+        field: 'tanggal_masuk', // Database column: tanggal_masuk
         allowNull: false
     },
     status: {
@@ -48,15 +56,18 @@ const DataPegawai = db.define('data_pegawai', {
         allowNull: false
     },
     url: DataTypes.STRING,
-    hak_akses: {
+    role: {
         type: DataTypes.STRING,
+        field: 'hak_akses', // Database column: hak_akses
         allowNull: false,
         validate: {
             notEmpty: true
         }
     }
 }, {
-    freezeTableName: true
+    freezeTableName: true,
+    // Sequelize will use the model name 'Employee' but query table 'data_pegawai'
+    tableName: 'data_pegawai'
 });
 
-export default DataPegawai;
+export default Employee;

@@ -3,12 +3,17 @@ import cors from 'cors';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import db from './config/Database.js';
+import argon2 from 'argon2';
 
 import SequelizeStore from 'connect-session-sequelize';
 import FileUpload from 'express-fileupload';
+import Employee from './models/DataPegawaiModel.js';
 
 import UserRoute from './routes/UserRoute.js';
 import AuthRoute from './routes/AuthRoute.js';
+import OvertimeRoute from './routes/OvertimeRoute.js';
+
+dotenv.config();
 
 const app = express();
 
@@ -17,28 +22,23 @@ const store = new sessionStore({
     db: db
 });
 
-/* (async() => {
-    await db.sync();
-})(); */
-
-dotenv.config();
-
 // Middleware
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    credentials: true
+}));
+
 app.use(session({
-    secret: process.env.SESS_SECRET,
+    secret: process.env.SESS_SECRET || process.env.JWT_SECRET || 'employee-salary-session-secret',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: store,
     cookie: {
-        secure: 'auto'
+        secure: false,
+        httpOnly: true,
+        sameSite: 'lax'
     }
 }));
-
-app.use(cors ({
-    credentials: true,
-    origin: 'http://localhost:5173'
-}));
-
 
 app.use(express.json());
 
@@ -47,9 +47,43 @@ app.use(express.static("public"));
 
 app.use(UserRoute);
 app.use(AuthRoute);
+app.use(OvertimeRoute);
 
-// store.sync();
+const ensureDefaultAdmin = async () => {
+    const employeeCount = await Employee.count();
 
-app.listen(process.env.APP_PORT, () => {
-    console.log('Server up and running...');
-});
+    if (employeeCount > 0) return;
+
+    const hashPassword = await argon2.hash('123456');
+    await Employee.create({
+        nationalId: '0000000000000001',
+        employeeName: 'Admin',
+        username: 'admin',
+        password: hashPassword,
+        gender: 'Laki-Laki',
+        position: 'Administrator',
+        joinDate: new Date().toISOString().slice(0, 10),
+        status: 'karyawan tetap',
+        photo: 'default.png',
+        url: '',
+        role: 'admin'
+    });
+
+    console.log('Default admin created: username=admin password=123456');
+};
+
+const startServer = async () => {
+    try {
+        await db.sync({ alter: true });
+        await store.sync();
+        await ensureDefaultAdmin();
+
+        app.listen(process.env.APP_PORT, () => {
+            console.log('Server up and running...');
+        });
+    } catch (error) {
+        console.error('Unable to start server:', error);
+    }
+};
+
+startServer();

@@ -1,43 +1,43 @@
-import DataPegawai from "../models/DataPegawaiModel.js";
-import DataKehadiran from "../models/DataKehadiranModel.js";
+import Employee from "../models/DataPegawaiModel.js";
+import Attendance from "../models/DataKehadiranModel.js";
 import { getDataGajiPegawai } from "./TransaksiController.js";
 import { verifyUser } from "../middleware/AuthUser.js";
 
-// method untuk dashboard pegawai
+// Employee dashboard
 export const dashboardPegawai = async (req, res) => {
     await verifyUser(req, res, () => {});
 
     const userId = req.userId;
 
-    const response = await DataPegawai.findOne({
+    const response = await Employee.findOne({
       where:{
         id: userId
       },
       attributes: [
-        'id', 'nik', 'nama_pegawai',
-        'jenis_kelamin', 'jabatan', 'tanggal_masuk',
-        'status', 'photo', 'hak_akses'
+        'id', 'nationalId', 'employeeName',
+        'gender', 'position', 'joinDate',
+        'status', 'photo', 'role'
       ]
     });
 
     res.status(200).json(response);
   };
 
-// method untuk view gaji single pegawai by month
+// View single employee salary by month
 export const viewDataGajiSinglePegawaiByMonth = async (req, res) => {
   await verifyUser(req, res, () => {});
 
   const userId = req.userId;
-  const user = await DataPegawai.findOne({
+  const user = await Employee.findOne({
     where:{
       id: userId
     }
   });
 
   try {
-      const dataGajiPegawai = await getDataGajiPegawai();
+      const salaryData = await getDataGajiPegawai();
 
-      const response = await DataKehadiran.findOne({
+      const attendanceResponse = await Attendance.findOne({
           attributes: [
               'bulan'
           ],
@@ -46,73 +46,73 @@ export const viewDataGajiSinglePegawaiByMonth = async (req, res) => {
           }
       });
 
-      if (response) {
-        const dataGajiByMonth = dataGajiPegawai.filter((data_gaji) => {
-          return data_gaji.id === user.id && data_gaji.bulan === response.bulan;
-        }).map((data_gaji) => {
+      if (attendanceResponse) {
+        const salaryByMonth = salaryData.filter((salary) => {
+          return salary.id === user.id && salary.bulan === attendanceResponse.bulan;
+        }).map((salary) => {
           return {
-            bulan: response.bulan,
-            tahun: data_gaji.tahun,
-            nik: user.nik,
-            nama_pegawai: user.nama_pegawai,
-            jenis_kelamin: user.jenis_kelamin,
-            jabatan: user.jabatan,
-            gaji_pokok: data_gaji.gaji_pokok,
-            tj_transport: data_gaji.tj_transport,
-            uang_makan: data_gaji.uang_makan,
-            potongan: data_gaji.potongan,
-            total_gaji: data_gaji.total,
+            bulan: attendanceResponse.bulan,
+            tahun: salary.tahun,
+            nationalId: user.nationalId,
+            employeeName: user.employeeName,
+            gender: user.gender,
+            position: user.position,
+            baseSalary: salary.baseSalary,
+            transportAllowance: salary.transportAllowance,
+            mealAllowance: salary.mealAllowance,
+            deduction: salary.deduction,
+            totalSalary: salary.total,
           };
         });
-          return res.json(dataGajiByMonth);
+          return res.json(salaryByMonth);
       }
 
-      res.status(404).json({ msg: `Data Gaji Untuk Bulan ${req.params.month} Tidak di Temukan Pada Pegawai ${user.nama_pegawai}` });
+      res.status(404).json({ msg: `Salary Data for Month ${req.params.month} Not Found for Employee ${user.employeeName}` });
   } catch (error) {
       res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
-// method untuk view gaji single pegawai by year
+// View single employee salary by year
 export const viewDataGajiSinglePegawaiByYear = async (req, res) => {
   await verifyUser(req, res, () => {});
 
   const userId = req.userId;
-  const user = await DataPegawai.findOne({
+  const user = await Employee.findOne({
     where:{
       id: userId
     }
   });
 
   try {
-    const dataGajiPegawai = await getDataGajiPegawai();
+    const salaryData = await getDataGajiPegawai();
     const { year } = req.params;
 
-    const dataGajiByYear = dataGajiPegawai.filter((data_gaji) => {
-        return data_gaji.id === user.id && data_gaji.tahun === parseInt(year);
-    }).map((data_gaji) => {
+    const salaryByYear = salaryData.filter((salary) => {
+        return salary.id === user.id && salary.tahun === parseInt(year);
+    }).map((salary) => {
         return {
-            tahun: data_gaji.tahun,
-            bulan: data_gaji.bulan,
-            nik: user.nik,
-            nama_pegawai: user.nama_pegawai,
-            jenis_kelamin: user.jenis_kelamin,
-            jabatan: user.jabatan,
-            gaji_pokok: data_gaji.gaji_pokok,
-            tj_transport: data_gaji.tj_transport,
-            uang_makan: data_gaji.uang_makan,
-            potongan: data_gaji.potongan,
-            total_gaji: data_gaji.total,
+            tahun: salary.tahun,
+            bulan: salary.bulan,
+            nationalId: user.nationalId,
+            employeeName: user.employeeName,
+            gender: user.gender,
+            position: user.position,
+            baseSalary: salary.baseSalary,
+            transportAllowance: salary.transportAllowance,
+            mealAllowance: salary.mealAllowance,
+            deduction: salary.deduction,
+            totalSalary: salary.total,
         };
     });
 
-    if (dataGajiByYear.length === 0) {
-        return res.status(404).json({ msg: `Data Tahun ${year} Tidak di Temukan` });
+    if (salaryByYear.length === 0) {
+        return res.status(404).json({ msg: `Data for Year ${year} Not Found` });
     }
-    res.json(dataGajiByYear)
+    res.json(salaryByYear)
   } catch (error) {
       res.status(500).json({ error: 'Internal Server Error' });
   }
 }
 
-// data yang ditampilkan ( Bulan / Tahun, Gaji Pokok, tj_transport, Uang Makan, Potongan, Total Gaji  )
+// Data displayed (Month/Year, Base Salary, Transport Allowance, Meal Allowance, Deductions, Total Salary)

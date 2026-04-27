@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiUser, FiLock } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../../../config/redux/action';
@@ -11,37 +11,30 @@ function LoginInput() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { user, isError, isSuccess, isLoading, message } = useSelector((state) => state.auth);
+  const { isLoading } = useSelector((state) => state.auth);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    dispatch(loginUser({ username, password }));
-  }
+    const result = await dispatch(loginUser({ username, password }));
 
-  useEffect(() => {
-    if (user || isSuccess) {
-      navigate("/dashboard");
-    }
-  }, [user, isSuccess, dispatch, navigate]);
-
-  useEffect(() => {
-    if (isError) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Login Gagal',
-        text: message,
-      }).then(() => {
-      });
-    } else if (isSuccess && user) {
+    if (loginUser.fulfilled.match(result)) {
       Swal.fire({
         icon: 'success',
         title: 'Login Berhasil',
-        text: message,
+        text: result.payload?.msg || 'Login Successful',
         timer: 1500,
-      }).then(() => {
+        showConfirmButton: false,
       });
+      navigate("/dashboard");
+      return;
     }
-  }, [isError, isSuccess, user, message, dispatch]);
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Login Gagal',
+      text: result.payload || 'Username atau password salah',
+    });
+  }
 
   return (
     <form onSubmit={handleLogin}>

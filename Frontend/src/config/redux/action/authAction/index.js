@@ -8,6 +8,8 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post('http://localhost:5000/login', {
         username: user.username,
         password: user.password
+      }, {
+        withCredentials: true
       });
       return response.data;
     } catch (error) {
@@ -15,30 +17,37 @@ export const loginUser = createAsyncThunk(
         const message = error.response.data.msg;
         return thunkAPI.rejectWithValue(message);
       }
+      return thunkAPI.rejectWithValue("Unable to connect to the server");
     }
   }
 );
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
-    const response = await axios.get('http://localhost:5000/me');
+    const response = await axios.get('http://localhost:5000/me', {
+      withCredentials: true
+    });
     return response.data;
   } catch (error) {
     if (error.response) {
       const message = error.response.data.msg;
       return thunkAPI.rejectWithValue(message);
     }
+    return thunkAPI.rejectWithValue("Session check failed");
   }
 });
 
-export const logoutUser = createAsyncThunk("user/logoutUser", async () => {
+export const logoutUser = createAsyncThunk("user/logoutUser", async (_, thunkAPI) => {
   try {
-    const response = await axios.delete("http://localhost:5000/logout");
+    const response = await axios.delete("http://localhost:5000/logout", {
+      withCredentials: true
+    });
     return response.data;
   } catch (error) {
     if (error.response) {
       const message = error.response.data.msg;
       return thunkAPI.rejectWithValue(message);
     }
+    return thunkAPI.rejectWithValue("Logout failed");
   }
 });

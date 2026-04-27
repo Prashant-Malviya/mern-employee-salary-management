@@ -3,7 +3,9 @@ import db from '../config/Database.js';
 
 const {DataTypes} = Sequelize;
 
-const DataKehadiran = db.define('data_kehadiran',{
+// Attendance model - maps to Indonesian database column 'data_kehadiran'
+// Field mapping: English property name -> Indonesian database column name
+const Attendance = db.define('data_kehadiran',{
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -12,31 +14,42 @@ const DataKehadiran = db.define('data_kehadiran',{
         },
         bulan: {
             type: DataTypes.STRING(15),
+            field: 'bulan', // Database column: bulan (month)
             allowNull: false
         },
-        nik: {
+        nationalId: {
             type: DataTypes.STRING(16),
+            field: 'nik', // Database column: nik
             allowNull: false
         },
-        nama_pegawai: {
+        employeeName: {
             type: DataTypes.STRING(100),
+            field: 'nama_pegawai', // Database column: nama_pegawai
             allowNull: false
         },
-        jenis_kelamin: {
-            type: DataTypes.STRING(20)
+        gender: {
+            type: DataTypes.STRING(20),
+            field: 'jenis_kelamin', // Database column: jenis_kelamin
         },
-        nama_jabatan: {
-            type: DataTypes.STRING(50)
+        positionName: {
+            type: DataTypes.STRING(50),
+            field: 'nama_jabatan', // Database column: nama_jabatan
         },
-        hadir: {
-            type: DataTypes.INTEGER(11)
+        present: {
+            type: DataTypes.INTEGER(11),
+            field: 'hadir', // Database column: hadir
         },
-        sakit: {
-            type: DataTypes.INTEGER(11)
+        sick: {
+            type: DataTypes.INTEGER(11),
+            field: 'sakit', // Database column: sakit
         },
-        alpha: {
-            type: DataTypes.INTEGER(11)
+        absent: {
+            type: DataTypes.INTEGER(11),
+            field: 'alpha', // Database column: alpha
         },
-    },{freezeTableName: true});
+    },{
+        freezeTableName: true,
+        tableName: 'data_kehadiran'
+    });
 
-export default DataKehadiran
+export default Attendance

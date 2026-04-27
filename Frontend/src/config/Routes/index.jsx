@@ -32,7 +32,8 @@ import {
   UbahPasswordAdmin,
   DataGajiPegawai,
   UbahPasswordPegawai,
-  DataPotongan
+  DataPotongan,
+  OvertimeForm
 } from '../../pages'
 
 const AppRoutes = () => {
@@ -98,6 +99,10 @@ const AppRoutes = () => {
       <Route
         path='/data-gaji'
         element={<DataGaji />}
+      />
+      <Route
+        path='/overtime'
+        element={<OvertimeForm />}
       />
       <Route
         path='/data-gaji/detail-data-gaji/name/:name'

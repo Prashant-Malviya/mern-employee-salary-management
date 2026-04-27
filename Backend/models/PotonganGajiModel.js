@@ -3,22 +3,28 @@ import db from '../config/Database.js';
 
 const {DataTypes} = Sequelize;
 
-const PotonganGaji = db.define('potongan_gaji',{
+// Salary Deduction model - maps to Indonesian database column 'potongan_gaji'
+// Field mapping: English property name -> Indonesian database column name
+const SalaryDeduction = db.define('potongan_gaji',{
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-        potongan: {
+        deductionName: {
             type: DataTypes.STRING(120),
+            field: 'potongan', // Database column: potongan
             allowNull: false
         },
-        jml_potongan: {
+        deductionAmount: {
             type: DataTypes.INTEGER(11),
+            field: 'jml_potongan', // Database column: jml_potongan
             allowNull: false
         }
-    },{freezeTableName: true
-});
+    },{
+        freezeTableName: true,
+        tableName: 'potongan_gaji'
+    });
 
-export default PotonganGaji;
+export default SalaryDeduction;
