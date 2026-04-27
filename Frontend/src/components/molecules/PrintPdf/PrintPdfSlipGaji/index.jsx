@@ -12,6 +12,14 @@ import {
 } from "../../../../config/redux/action";
 import { ButtonOne, ButtonTwo } from "../../../atoms";
 
+const formatDateDDMMYYYY = (date = new Date()) => {
+    return date.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+    });
+};
+
 const PrintPdfSlipGaji = () => {
     const componentRef = useRef();
     const dispatch = useDispatch();
@@ -27,6 +35,7 @@ const PrintPdfSlipGaji = () => {
 
     const { isError, user } = useSelector((state) => state.auth);
     const { dataSlipGaji } = useSelector((state) => state.slipGaji);
+    const printedDate = formatDateDDMMYYYY();
 
     const getDataByYear = async (selectedYear) => {
         dispatch(fetchSlipGajiByYear(selectedYear));
@@ -231,7 +240,7 @@ const PrintPdfSlipGaji = () => {
                                     <span>{name}</span>
                                 </div>
                                 <div className="font-medium text-black dark:text-white">
-                                    <span className="text-right">Karawang, {`${new Date().getDate()} ${bulan} ${tahun}`}</span>
+                                    <span className="text-right">Karawang, {printedDate}</span>
                                     <br />
                                     <span>Finance</span>
                                     <br />
@@ -240,7 +249,7 @@ const PrintPdfSlipGaji = () => {
                                 </div>
                             </div>
                             <div className="italic text-black dark:text-white mt-30">
-                                Dicetak Pada : {`${new Date().getDate()} ${bulan} ${tahun}`}
+                                Dicetak Pada : {printedDate}
                             </div>
                         </div>
                     );
